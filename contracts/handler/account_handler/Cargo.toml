@@ -1,0 +1,22 @@
+[package]
+name = "account-handler"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[features]
+# use library feature to disable all instantiate/execute/query exports
+library = []
+
+[dependencies]
+cosmwasm-std = { workspace = true }
+cosmwasm-schema = { workspace = true }
+cw-storage-plus = { workspace = true }
+thiserror = { workspace = true }
+verifier = { workspace = true, features = ["library"] }
+relayer-handler = { workspace = true, features = ["library"] }
+
+[dev-dependencies]
+cw-multi-test = { workspace = true }

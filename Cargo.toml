@@ -1,0 +1,14 @@
+[workspace]
+members = ["contracts/verifier", "contracts/handler/*", "contracts/email_wallet_core"]
+resolver = "2"
+
+[workspace.dependencies]
+cosmwasm-std = { version = "2.1.5", features = ["staking"] }
+cw-storage-plus = "2.0.0"
+thiserror = "2.0.6"
+cosmwasm-schema = "2.1.5"
+pairing_ce = "0.28.5"
+verifier = { path = "contracts/verifier", features = ["library"] }
+relayer-handler = { path = "contracts/handler/relayer_handler", features = ["library"] }
+
+cw-multi-test = "2.0.1"
